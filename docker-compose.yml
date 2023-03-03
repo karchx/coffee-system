@@ -26,3 +26,18 @@ services:
       - 3001:3001
     command: pnpm run docs:dev
     container_name: docs
+
+  product:
+    build:
+      context: ./dockerfiles/backend
+      dockerfile: product.dockerfile
+    image: coffee-system-product
+    environment:
+      APP_NAME: 'product-service in docker'
+    ports:
+      - 5001:5001
+    networks:
+      - coffee-sytem-network
+  
+networks:
+  coffee-sytem-network:
