@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  core: &core
+    build:
+      context: ./dockerfiles/core
+      dockerfile: pnpm.dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+    volumes:
+      - .:/src
+    working_dir: /src
+    container_name: core
+
+  web:
+    <<: *core
+    ports:
+      - 3000:3000
+    command: pnpm run web:dev
+    container_name: web
+
+  docs:
+    <<: *core
+    ports:
+      - 3001:3001
+    command: pnpm run docs:dev
+    container_name: docs
