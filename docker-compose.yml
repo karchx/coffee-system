@@ -29,8 +29,8 @@ services:
 
   product:
     build:
-      context: ./dockerfiles/backend
-      dockerfile: product.dockerfile
+      context: ./apps/backend
+      dockerfile: Dockerfile
     image: coffee-system-product
     environment:
       APP_NAME: 'product-service in docker'
