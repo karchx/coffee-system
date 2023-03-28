@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/google/wire v0.5.0
 	github.com/ilyakaznacheev/cleanenv v1.4.2
+	github.com/pkg/errors v0.9.1
 	golang.org/x/exp v0.0.0-20230304125523-9ff063c70017
 	google.golang.org/grpc v1.53.0
 )
