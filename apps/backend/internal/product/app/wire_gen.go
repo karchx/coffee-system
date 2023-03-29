@@ -8,12 +8,16 @@ package app
 
 import (
 	"github/karchx/coffee-system/cmd/product/config"
+	"github/karchx/coffee-system/internal/product/infras/repo"
+	"github/karchx/coffee-system/internal/product/usecases/products"
 	"google.golang.org/grpc"
 )
 
 // Injectors from wire.go:
 
 func InitApp(cfg *config.Config, grpcServer *grpc.Server) (*App, error) {
-	app := New(cfg)
+	productRepo := repo.NewOrderRepo()
+	useCase := products.NewService(productRepo)
+	app := New(cfg, useCase)
 	return app, nil
 }
