@@ -17,6 +17,6 @@ func InitApp(cfg *config.Config, grpcServer *grpc.Server) (*App, error) {
 	panic(wire.Build(
 		New,
 		repo.RepositorySet,
-		productsUC.NewService,
+		productsUC.UseCaseSet,
 	))
 }
