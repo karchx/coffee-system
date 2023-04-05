@@ -1,13 +1,13 @@
-syntax="proto3"
+syntax="proto3";
 
-package "go.coffeesystem.proto.common"
+package go.coffeesystem.proto.common;
 
 import "google/api/annotations.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 
-options go_package = "github/karchx/coffee-system/proto/gen";
+option go_package = "github/karchx/coffee-system/proto/gen";
 
-options (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
     info: {
         version: "1.0";
     };

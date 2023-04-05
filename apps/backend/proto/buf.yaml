@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/thangchung/go-coffeeshop
+name: buf.build/karchx/coffee-system
 deps:
   - buf.build/googleapis/googleapis
   - buf.build/grpc-ecosystem/grpc-gateway
